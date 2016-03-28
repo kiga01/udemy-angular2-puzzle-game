@@ -1,28 +1,18 @@
-var gulp = require('gulp');
+var gulp = require('gulp'),
+    minifycss = require('gulp-clean-css'),
+    compass = require('gulp-compass'),
+    ext_replace = require('gulp-ext-replace'),
+    imagemin = require('gulp-imagemin'),
+    sourcemaps = require('gulp-sourcemaps'),
+    typescript = require('gulp-typescript'),
+    jsuglify = require('gulp-uglify'),
+    gutil = require('gulp-util'),
+    precss = require('precss');
 
-var assetsDev = 'assets/';
-var assetsProd = 'src/';
-
-var appDev = 'dev/';
-var appProd = 'app/';
-
-/* Mixed */
-var ext_replace = require('gulp-ext-replace');
-var gutil = require('gulp-util');
-
-/* CSS */
-var compass = require('gulp-compass');
-var sourcemaps = require('gulp-sourcemaps');
-var minifycss = require('gulp-clean-css');
-var precss = require('precss');
-var cssnano = require('cssnano');
-
-/* JS & TS */
-var jsuglify = require('gulp-uglify');
-var typescript = require('gulp-typescript');
-
-/* Images */
-var imagemin = require('gulp-imagemin');
+var assetsDev = 'assets/',
+    assetsProd = 'src/',
+    appDev = 'dev/',
+    appProd = 'app/';
 
 var tsProject = typescript.createProject('tsconfig.json');
 
