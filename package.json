@@ -1,5 +1,5 @@
 {
-  "name": "udemy-angular2-ep1",
+  "name": "udemy-angular2-puzzle-game",
   "version": "1.0.0",
   "scripts": {
     "lite": "lite-server",
@@ -8,6 +8,7 @@
     "typings": "typings"
   },
   "license": "MIT",
+  "author": "kiga01",
   "dependencies": {
     "angular2": "2.0.0-beta.12",
     "bootstrap-sass": "^3.3.6",
