@@ -8,11 +8,12 @@ var appProd = 'app/';
 
 /* Mixed */
 var ext_replace = require('gulp-ext-replace');
+var gutil = require('gulp-util');
 
 /* CSS */
-var postcss = require('gulp-postcss');
+var compass = require('gulp-compass');
 var sourcemaps = require('gulp-sourcemaps');
-var autoprefixer = require('autoprefixer');
+var minifycss = require('gulp-clean-css');
 var precss = require('precss');
 var cssnano = require('cssnano');
 
@@ -27,10 +28,12 @@ var tsProject = typescript.createProject('tsconfig.json');
 
 gulp.task('build-css', function () {
     return gulp.src(assetsDev + 'scss/*.scss')
-        .pipe(sourcemaps.init())
-        .pipe(postcss([precss, autoprefixer, cssnano]))
-        .pipe(sourcemaps.write())
-        .pipe(ext_replace('.css'))
+        .pipe(compass({
+            sass: 'app',
+            style: 'expanded'
+        })
+            .on('error', gutil.log))
+        //.pipe(minifycss())
         .pipe(gulp.dest(assetsProd + 'css/'));
 });
 
