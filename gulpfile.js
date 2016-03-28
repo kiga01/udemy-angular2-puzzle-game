@@ -17,7 +17,7 @@ var assetsDev = 'assets/',
 var tsProject = typescript.createProject('tsconfig.json');
 
 gulp.task('build-css', function () {
-    gulp.src(assetsDev + 'scss/*.scss')
+    return gulp.src(assetsDev + 'scss/*.scss')
         .pipe(compass({
             sass: 'assets/scss',
             style: 'expanded'
