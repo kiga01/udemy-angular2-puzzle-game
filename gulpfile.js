@@ -17,14 +17,14 @@ var assetsDev = 'assets/',
 var tsProject = typescript.createProject('tsconfig.json');
 
 gulp.task('build-css', function () {
-    return gulp.src(assetsDev + 'scss/*.scss')
+    gulp.src(assetsDev + 'scss/*.scss')
         .pipe(compass({
-            sass: 'app',
+            sass: 'assets/scss',
             style: 'expanded'
         })
             .on('error', gutil.log))
-        //.pipe(minifycss())
-        .pipe(gulp.dest(assetsProd + 'css/'));
+        .pipe(minifycss())
+        .pipe(gulp.dest(assetsProd + 'css/'))
 });
 
 gulp.task('build-ts', function () {

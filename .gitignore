@@ -3,3 +3,5 @@
 /src
 /.idea
 npm-debug.log
+.sass-cache
+/css
