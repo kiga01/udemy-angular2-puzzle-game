@@ -1,8 +1,6 @@
 {
   "name": "udemy-angular2-puzzle-game",
   "version": "1.0.0",
-  "description": "This is the puzzle game from the udemy angular 2 course",
-  "author": "kiga01",
   "scripts": {
     "lite": "lite-server",
     "gulp": "gulp",
